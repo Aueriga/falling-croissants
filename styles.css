@@ -40,24 +40,21 @@ img {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 400px;
-    height: 200px;
+    width: 60%;
+    height: 30%;
     background-color: burlywood;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     border-radius: 50px;
-    -webkit-transform: translate(-50%, -50%);
-    -moz-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    -o-transform: translate(-50%, -50%);
 }
 
 .failed span {
     padding: 19px;
     color: white;
     font-size: 25px;
+    text-wrap: nowrap;
 }
 
 .failed button {

@@ -33,8 +33,8 @@ function createSweet() {
     sweet.src = imgSrc;
     sweet.classList.add(random_item);
     sweet.classList.add('sweet');
-    sweet.style.left = Math.random() * window.innerWidth + 'px';
-    sweet.style.animationDuration = 12 + Math.random() - (current_score * 0.005) * 5 + 's';
+    sweet.style.left = Math.random() * 80 + '%';
+    sweet.style.animationDuration = 12 + Math.random() - (current_score * 0.01) * 5 + 's';
 
     container.appendChild(sweet);
     sweet.addEventListener('animationend', () => {
