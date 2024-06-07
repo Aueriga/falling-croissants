@@ -10,7 +10,11 @@ body {
     height: 100vh;
 }
 
-.croissant {
+img {
+    mix-blend-mode: multiply;
+}
+
+.sweet {
     position: absolute;
     top: -100px;
     /* Start above the visible area */
@@ -37,6 +41,6 @@ body {
     }
 }
 
-.croissant {
+.sweet {
     animation: fall linear infinite;
 }
