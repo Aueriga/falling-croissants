@@ -10,18 +10,68 @@ body {
     height: 100vh;
 }
 
-.croissant {
-    position: absolute;
-    top: -100px; /* Start above the visible area */
-    width: 50px; /* Adjust size as needed */
-    pointer-events: none; /* Prevent interaction */
+img {
+    mix-blend-mode: multiply;
 }
+
+.sweet {
+    position: absolute;
+    top: -100px;
+    /* Start above the visible area */
+    width: 50px;
+    /* Adjust size as needed */
+}
+
+.score {
+    margin-top: 20px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    display: inline-block;
+    padding: 20px 30px;
+    background-color: burlywood;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
+.failed {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    height: 30%;
+    background-color: burlywood;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 50px;
+}
+
+.failed span {
+    padding: 19px;
+    color: white;
+    font-size: 25px;
+    text-wrap: nowrap;
+}
+
+.failed button {
+    padding: 12px;
+    border-radius: 15px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
 @keyframes fall {
     to {
         transform: translateY(100vh);
     }
 }
 
-.croissant {
-    animation: fall linear infinite;
+.sweet {
+    animation: fall linear 1;
 }
