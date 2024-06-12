@@ -14,7 +14,7 @@ img {
     mix-blend-mode: multiply;
 }
 
-.sweet {
+.croissant {
     position: absolute;
     top: -100px;
     /* Start above the visible area */
@@ -72,6 +72,6 @@ img {
     }
 }
 
-.sweet {
+.croissant {
     animation: fall linear 1;
 }

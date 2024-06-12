@@ -1,57 +1,37 @@
-const sweets = {
-    "croissant": {
-        points: 1,
-        filetype: "png"
-    },
-    "donuts": {
-        points: 3,
-        filetype: "jpg"
-    },
-    "muffin": {
-        points: 2,
-        filetype: "jpg"
-    },
-    "cinnamon-rolls": {
-        filetype: "jpg",
-        points: 4
-    },
 
-}
 let current_score = 0
 let failed = false
-let sweets_list = Object.keys(sweets)
-let sweetsIntervId;
+let croissantIntervId;
 
 const container = document.getElementById('container');
 const score = document.querySelector(".score span")
 
-function createSweet() {
-    let random_item = sweets_list[Math.floor(Math.random() * sweets_list.length)]
-    const imgSrc = `./media/assets/${random_item}.${sweets[random_item].filetype}`;
-    const sweet = document.createElement('img');
 
-    sweet.src = imgSrc;
-    sweet.classList.add(random_item);
-    sweet.classList.add('sweet');
-    sweet.style.left = Math.random() * 80 + '%';
-    sweet.style.animationDuration = 12 + Math.random() - (current_score * 0.01) * 5 + 's';
+function createCroissant() {
+    const croissant = document.createElement('img');
+    croissant.src = "./croissant.png";
+    croissant.classList.add('croissant');
+    croissant.style.left = Math.random() * window.innerWidth + 'px';
+    croissant.style.animationDuration = 12 + Math.random() - (current_score * 0.03) * 5 + 's';
+    container.appendChild(croissant);
 
-    container.appendChild(sweet);
-    sweet.addEventListener('animationend', () => {
+    croissant.addEventListener('animationend', () => {
         handlefailed()
     });
+
+    container.appendChild(croissant);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
     function startRain() {
-        sweetsIntervId = setInterval(createSweet, 900);
+        croissantIntervId = setInterval(createCroissant, 700);
     }
     startRain();
 });
 
 function handlefailed() {
     document.body.removeChild(container)
-    clearInterval(sweetsIntervId)
+    clearInterval(croissantIntervId)
     const failDiv = document.createElement("div")
     const tryAgainBtn = document.createElement("button")
     const scoreSpan = document.createElement("span")
@@ -71,10 +51,8 @@ function handlefailed() {
 
 
 addEventListener("click", (e) => {
-    let classlist = e.target.classList
-    let sweet_name = Array.from(classlist).filter(c => sweets_list.includes(c))
-    if (sweet_name.length > 0) {
-        current_score += sweets[`${sweet_name[0]}`]?.points ?? 0
+    if (e.target.className === "croissant") {
+        current_score++
         score.textContent = current_score
         container.removeChild(e.target);
     }
