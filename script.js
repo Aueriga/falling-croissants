@@ -11,7 +11,7 @@ function createCroissant() {
     const croissant = document.createElement('img');
     croissant.src = "./croissant.png";
     croissant.classList.add('croissant');
-    croissant.style.left = Math.random() * window.innerWidth + 'px';
+    croissant.style.left = Math.random() * 80 + '%';
     croissant.style.animationDuration = 12 + Math.random() - (current_score * 0.03) * 5 + 's';
     container.appendChild(croissant);
 
